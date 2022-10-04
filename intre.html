@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<input id="mic" type="date" />
+<input id="identity" type="text" ></input>
+  <button onclick="addTitle()">Press me</button>            
+
+<div id="pis"></div>
+  <script>
+
+    let dominic = [{
+      title: 'Chopper',
+      dueDate: '2007-02-01',
+       id:'id1'},
+      
+      {
+      title: 'Jesse James',
+      dueDate: '2008-08-06',
+      id:'id2'},
+      {
+      title: 'Killing them Softly',
+      dueDate: '2011-06-22',
+      id:'id3' }];
+
+     render();
+    
+    
+
+      let addTitle = () => {
+      let textbox = document.getElementById("identity");        //(textbox,datePicker)  = (nis,duedate)  
+      let nis = textbox.value;
+      let datePicker = document.getElementById('mic');
+      let dueDate = datePicker.value;
+
+      const id = new Date().getTime();
+
+      dominic.push({
+        title: nis,
+        dueDate: dueDate,
+        id:id,
+      });
+
+      render();
+      }
+
+      function deleteTool() {
+        
+      }
+    
+      function render(){
+        
+      document.getElementById("pis").innerHTML = '';
+      
+      dominic.forEach(function (brad) {
+      let qualities = document.createElement('div');
+      qualities.innerText = brad.title +' - '+ brad.dueDate;
+      let deleteButton = document.createElement('button');
+      deleteButton.innerText = 'Delete';
+      deleteButton.style = 'margin-left: 12px;';
+      deleteButton.onclick =  deleteTool; 
+       //only a name of the function rather than the actual function -becoz setting attributes  using DOM
+      deleteButton.id = brad.id;
+      qualities.appendChild(deleteButton);
+      
+      let titleList = document.getElementById('pis');
+      titleList.appendChild(qualities);
+
+     })
+
+    };
+  </script>
+</body>
+</html>

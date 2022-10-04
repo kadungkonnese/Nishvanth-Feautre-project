@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev</title>
+</head>
+<body>
+  <div>CHRISTOPHER NOLAN</div>
+  <input id="add-title" type="text" />
+  <button onclick="addmovie()">ADD me</button>
+
+  <div id="chris"></div>
+  
+      
+       <script>
+       
+       let flims = ['Momento', 'Inception' ,'Interstellar', 'The Prestige'];
+       
+
+       render();
+
+       function addmovie() {
+        let textbox = document.getElementById('add-title');
+        let title = textbox.value;
+        flims.push(title);
+
+        render();
+      }
+
+       function render() { 
+
+        document.getElementById('chris').innerHTML = '';
+        flims.forEach(function (nolan){
+        let element = document.createElement('div');
+        element.innerText = nolan;
+        let todolist = document.getElementById('chris');
+        todolist.appendChild(element);
+        });
+
+      }
+
+
+       
+
+       
+        
+
+        
+        
+        
+        </script>
+</body>
+</html>

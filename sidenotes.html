@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rough</title>
+</head>
+<body>
+  <input id="identity" type="text" ></input>
+  <button onclick="addTitle()">Press me</button>
+
+  <div id="pis"></div>
+
+
+  <script>
+let dominic = ['Chopper', 'Jesse James', 'Killing them Softly' ];
+
+render();
+
+    function render(){
+      document.getElementById("pis").innerHTML = '';
+      dominic.push('fuck');
+
+      dominic.forEach(function (title) {
+      let qualities = document.createElement('div');
+      qualities.innerText = title;
+      let titleList = document.getElementById('pis');
+      titleList.appendChild(qualities);
+     })
+
+    };
+
+
+</script>
+  
+</body>
+</html>
